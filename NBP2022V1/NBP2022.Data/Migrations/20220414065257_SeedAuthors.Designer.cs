@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NBP2022.Data;
 
 namespace NBP2022.Data.Migrations
 {
     [DbContext(typeof(NBPDbContext))]
-    partial class NBPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220414065257_SeedAuthors")]
+    partial class SeedAuthors
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -87,17 +89,6 @@ namespace NBP2022.Data.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("Courses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AuthorId = 1,
-                            Description = "Learning patterns",
-                            FullPrice = 0f,
-                            Level = 1,
-                            Name = "Patterns"
-                        });
                 });
 
             modelBuilder.Entity("NBP2022.Data.Models.Tag", b =>

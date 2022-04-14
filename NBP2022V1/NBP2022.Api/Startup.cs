@@ -1,19 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NBP2022.Data;
-using NBP2022.Data.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using NBP2022.Data.Models;
+using NBP2022.Repository.Interfaces;
+using NBP2022.Repository.Repositories;
 
 namespace NBP2022.Api
 {
@@ -29,8 +24,10 @@ namespace NBP2022.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
-            services.SetupContext(Configuration.GetConnectionString("Default"));
+            services.AddDbContext<NBPDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
