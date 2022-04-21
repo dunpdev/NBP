@@ -1,10 +1,8 @@
-﻿using NBP2022.Data.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace NBP2022.Repository.Interfaces
 {
-    public interface IAuthorRepository : IRepository<Author> { }
     public interface IRepository<T> where T : class
     {
         Task AddAsync(T entity);

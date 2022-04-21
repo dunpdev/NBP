@@ -1,18 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NBP2022.Data;
-using NBP2022.Data.Models;
 using NBP2022.Repository.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace NBP2022.Repository.Repositories
 {
-    public class AuthorRepository : Repository<Author>, IAuthorRepository {
-        public AuthorRepository(NBPDbContext context) : base(context)
-        {
 
-        }
-    }
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly NBPDbContext context;

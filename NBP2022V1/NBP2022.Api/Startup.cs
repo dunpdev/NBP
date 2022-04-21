@@ -28,6 +28,9 @@ namespace NBP2022.Api
             options.UseSqlServer(Configuration.GetConnectionString("Default")));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<ITagRepository, TagRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
