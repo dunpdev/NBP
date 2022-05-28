@@ -13,6 +13,7 @@ using NBP2022.Data.Models;
 using NBP2022.Repository.Interfaces;
 using MediatR;
 using NBP2022.Api.Mediator.Course.Query;
+using NBP2022.Api.Mediator.Course.Command;
 
 namespace NBP2022.Api.Controllers
 {
@@ -68,6 +69,18 @@ namespace NBP2022.Api.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var result = await mediator.Send(new CourseIdQuery(id));
+            if (!result.IsSuccess)
+                return BadRequest(result.Errors);
+
+            return Ok(result.Data);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody]CourseCommand form)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var result = await mediator.Send(form);
             if (!result.IsSuccess)
                 return BadRequest(result.Errors);
 

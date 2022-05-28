@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using NBP2022.Api.DTOs;
+using NBP2022.Api.Mediator.Course.Command;
 using NBP2022.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace NBP2022.Api.Mappings
             #endregion
 
             #region DTOs to Models
+            CreateMap<CourseCommand, Course>();
             CreateMap<CourseQueryDTO, CourseQuery>();
             CreateMap<SaveAuthorDTO,Author>()
                 .ForMember(d => d.City, s => s.MapFrom(d => d.Contact.Town));
