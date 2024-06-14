@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Neo4jClient" Version="5.1.15" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="7.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NBP2024.Application\NBP2024.Application.csproj" />
+    <ProjectReference Include="..\NBP2024.Domain\NBP2024.Domain.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure.GraphDB\NBP2024.Infrastructure.GraphDB.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure.MongoDB\NBP2024.Infrastructure.MongoDB.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure\NBP2024.Infrastructure.csproj" />
+    <ProjectReference Include="..\NBP2024.Repository\NBP2024.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

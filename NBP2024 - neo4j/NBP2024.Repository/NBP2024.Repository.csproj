@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NBP2024.Domain\NBP2024.Domain.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure.GraphDB\NBP2024.Infrastructure.GraphDB.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure.MongoDB\NBP2024.Infrastructure.MongoDB.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure\NBP2024.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

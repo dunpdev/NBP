@@ -1,0 +1,46 @@
+2024-05-20 15:43:35.917 +02:00 [INF] User profile is available. Using 'C:\Users\safet.purkovic\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-20 15:43:36.260 +02:00 [INF] Now listening on: https://localhost:7098
+2024-05-20 15:43:36.260 +02:00 [INF] Now listening on: http://localhost:5055
+2024-05-20 15:43:36.263 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-20 15:43:36.263 +02:00 [INF] Hosting environment: Development
+2024-05-20 15:43:36.263 +02:00 [INF] Content root path: C:\Users\safet.purkovic\source\repos\NBP2024\NBP2024.API
+2024-05-20 15:43:39.781 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7098/swagger/index.html - null null
+2024-05-20 15:43:40.122 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7098/swagger/index.html - 200 null text/html;charset=utf-8 351.3329ms
+2024-05-20 15:43:40.133 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7098/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-20 15:43:40.148 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7098/_vs/browserLink - null null
+2024-05-20 15:43:40.150 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7098/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 17.1617ms
+2024-05-20 15:43:40.216 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7098/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.6984ms
+2024-05-20 15:43:40.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7098/swagger/v1/swagger.json - null null
+2024-05-20 15:43:40.517 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7098/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 201.5545ms
+2024-05-20 15:44:18.049 +02:00 [INF] Application is starting
+2024-05-27 15:37:04.192 +02:00 [INF] Application is starting
+2024-05-27 15:39:11.247 +02:00 [INF] Application is starting
+2024-05-27 15:41:11.657 +02:00 [INF] Application is starting
+2024-05-27 15:41:43.465 +02:00 [INF] Application is starting
+2024-05-27 16:10:27.738 +02:00 [INF] Application is starting
+2024-05-27 16:12:26.518 +02:00 [INF] Application is starting
+2024-06-14 18:11:03.221 +02:00 [INF] Application is starting
+2024-06-14 18:11:11.041 +02:00 [FTL] Application failed to start
+System.Net.Http.HttpRequestException: No connection could be made because the target machine actively refused it. (localhost:7474)
+ ---> System.Net.Sockets.SocketException (10061): No connection could be made because the target machine actively refused it.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|285_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.CreateHttp11ConnectionAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.AddHttp11ConnectionAsync(QueueItem queueItem)
+   at System.Threading.Tasks.TaskCompletionSourceWithCancellation`1.WaitWithCancellationAsync(CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.HttpConnectionWaiter`1.WaitForConnectionWithTelemetryAsync(HttpRequestMessage request, HttpConnectionPool pool, Boolean async, CancellationToken requestCancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at Neo4jClient.Execution.ResponseBuilder.PrepareAsync()
+   at Neo4jClient.Execution.ResponseBuilder.ExecuteAsync(String commandDescription, Func`2 continuationFunction)
+   at Neo4jClient.Execution.ResponseBuilder`1.ExecuteAsync(String commandDescription, Func`2 continuationFunction)
+   at Neo4jClient.NeoServerConfiguration.GetConfigurationAsync(Uri rootUri, String username, String password, String realm, Nullable`1 encryptionLevel, ExecutionConfiguration executionConfiguration)
+   at Neo4jClient.GraphClient.ConnectAsync(NeoServerConfiguration configuration)
+   at Program.<Main>$(String[] args) in C:\Users\safet.purkovic\source\repos\NBP2024\NBP2024.API\Program.cs:line 38
+2024-06-14 18:12:05.886 +02:00 [INF] Application is starting

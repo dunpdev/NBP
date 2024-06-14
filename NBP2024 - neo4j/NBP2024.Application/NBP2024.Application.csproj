@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NBP2024.Domain\NBP2024.Domain.csproj" />
+    <ProjectReference Include="..\NBP2024.Infrastructure\NBP2024.Infrastructure.csproj" />
+    <ProjectReference Include="..\NBP2024.Repository\NBP2024.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
